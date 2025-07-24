@@ -9,8 +9,16 @@ def ingresar_cantidad_numeros(cantidad_numeros):
 def sumar_promedio_positivos_negativos(numeros):
     suma = sum(numeros)
     promedio = suma/len(numeros)
+    positivos= 0
+    negativos=0
+    for i in numeros:
+        if i <0:
+            negativos +=1
+        else:
+            positivos +=1
     print(f"La suma de los numeros es de: {suma}")
     print(f"El promedio de los numeros es: {promedio}")
+    print(f"Hay {positivos} numeros positivos y {negativos} numeros negativos")
 def calcular_area_triangulo(base,altura):
     return (base * altura)/2
 def es_par(n):
