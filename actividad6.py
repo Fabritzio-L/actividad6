@@ -1,12 +1,16 @@
 def saludar():
     print("Bienvenido al programa")
 def ingresar_cantidad_numeros(cantidad_numeros):
-    cantidad_numeros = int(input("Ingrese la cantidadc de numeros a ingresar: "))
     numeros = []
     for i in range(cantidad_numeros):
         n = int(input("Ingrese un numero: "))
         numeros.append(n)
     return numeros
+def sumar_promedio_positivos_negativos(numeros):
+    suma = sum(numeros)
+    promedio = suma/len(numeros)
+    print(f"La suma de los numeros es de: {suma}")
+    print(f"El promedio de los numeros es: {promedio}")
 def calcular_area_triangulo(base,altura):
     return (base * altura)/2
 def es_par(n):
@@ -22,8 +26,10 @@ while True:
     opcion = input("Ingrese una de las opciones: ")
     match opcion:
         case "1":
-            cantidad_numeros=0
-            print(ingresar_cantidad_numeros(cantidad_numeros))
+            n= int(input("Ingrese la cantidad de numeros: "))
+            numeros= ingresar_cantidad_numeros((n))
+            print(numeros)
+            print(sumar_promedio_positivos_negativos(numeros))
 
         case "2":
             base = int(input("Ingrese la base del triangulo: "))
