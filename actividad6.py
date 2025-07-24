@@ -31,7 +31,15 @@ def promediar_calificaciones(calificaciones):
         suma +=i
     promedio = suma/len(calificaciones)
     return promedio
-
+def mayor_menor(numeros):
+    mayor = numeros[0]
+    menor = numeros[0]
+    for i in numeros:
+        if i > mayor:
+            mayor =i
+        elif i < menor:
+            menor = i
+    return f"El mayor es {mayor} y el menor es {menor}"
 while True:
     saludar()
     print("1. Ingresar n numeros.")
@@ -59,10 +67,12 @@ while True:
         case "4":
             n= int(input("Ingrese la cantidad de calificaciones: "))
             calificaciones= ingresar_cantidad_numeros((n))
-            print(promediar_calificaciones(calificaciones))
+            print(f"El promedio de las calificaciones es de: {promediar_calificaciones(calificaciones)}")
             print()
         case "5":
-            print("")
+            n= int(input("Ingrese la cantidad de numeros a ingresar: "))
+            numeros= ingresar_cantidad_numeros(n)
+            print(mayor_menor(numeros))
         case "6":
             print("Saliendo del programa...")
             break
