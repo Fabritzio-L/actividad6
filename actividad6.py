@@ -24,7 +24,15 @@ while True:
     match opcion:
         case "1":
         case "2":
+            base = int(input("Ingrese la base del triangulo: "))
+            altura=int(input("Ingrese la altura del triangulo"))
+            print(f"El area del triangulo es: {calcular_area_triangulo(base,altura)}")
         case "3":
+            numero = int(input("Ingrese un numero: "))
+            if es_par(numero):
+                print(f"El numero {numero} es par.")
+            else:
+                print(f"El numero {numero} es impar.")
         case "4":
         case "5":
         case "6":
