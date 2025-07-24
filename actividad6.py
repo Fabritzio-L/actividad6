@@ -7,7 +7,9 @@ def ingresar_cantidad_numeros(cantidad_numeros):
         numeros.append(n)
     return numeros
 def sumar_promedio_positivos_negativos(numeros):
-    suma = sum(numeros)
+    suma=0
+    for i in numeros:
+        suma +=i
     promedio = suma/len(numeros)
     positivos= 0
     negativos=0
@@ -23,6 +25,13 @@ def calcular_area_triangulo(base,altura):
     return (base * altura)/2
 def es_par(n):
     return n % 2 ==0
+def promediar_calificaciones(calificaciones):
+    suma=0
+    for i in calificaciones:
+        suma +=i
+    promedio = suma/len(calificaciones)
+    return promedio
+
 while True:
     saludar()
     print("1. Ingresar n numeros.")
@@ -36,9 +45,7 @@ while True:
         case "1":
             n= int(input("Ingrese la cantidad de numeros: "))
             numeros= ingresar_cantidad_numeros((n))
-            print(numeros)
             print(sumar_promedio_positivos_negativos(numeros))
-
         case "2":
             base = int(input("Ingrese la base del triangulo: "))
             altura=int(input("Ingrese la altura del triangulo"))
@@ -50,7 +57,10 @@ while True:
             else:
                 print(f"El numero {numero} es impar.")
         case "4":
-            print("")
+            n= int(input("Ingrese la cantidad de calificaciones: "))
+            calificaciones= ingresar_cantidad_numeros((n))
+            print(promediar_calificaciones(calificaciones))
+            print()
         case "5":
             print("")
         case "6":
